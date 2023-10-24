@@ -62,7 +62,7 @@ let middleWareFunction = (request, response, next) => {
   }
   console.log(jwtToken);
   if (jwtToken !== undefined) {
-    jwt.verify(jwtToken, "MY_SECRET_KEY", async (payload, error) => {
+    jwt.verify(jwtToken, "MY_SECRET_KEY", async (error,payload) => {
       if (error) {
         console.log(payload);
         response.status(401);
